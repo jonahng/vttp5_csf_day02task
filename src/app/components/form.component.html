@@ -1,0 +1,71 @@
+<h2>ORDERING</h2>
+
+<form [formGroup]="form">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" formControlName="name" ></td>
+            
+        </tr>
+
+        <tr>
+          <td>Address</td>
+          <td><input type="text" formControlName="address" ></td>
+          
+      </tr>
+
+      <tr>
+        <td>Email</td>
+        <td><input type="text" formControlName="email" ></td>
+        
+    </tr>
+
+    <tr>
+      <td>Delivery Date</td>
+      <td><input type="date" formControlName="deliveryDate"></td>
+  </tr>
+  <tr>
+    <td>Availability:</td>
+
+
+  </tr>
+  <tr>
+    <td><input type="checkbox" > 0900-1200</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" > 1200-1600</td>
+
+  </tr>
+
+  <tr>
+    <td><input type="checkbox" > 1600-2000</td>
+  </tr>
+
+
+  <tr>    
+    <td>Urgency</td>
+    <td><input type="checkbox" formControlName="urgency"></td>
+</tr>
+
+        <tr>
+            <td>Submit</td>
+            <td><button type="button" (click)="processForm()">Submit</button>
+                <button type="button">ADD COLLABORATOR</button>
+            </td>
+            
+        </tr>
+    </table>
+
+    <h3>Collaborators</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+
+    </table>
+</form>
