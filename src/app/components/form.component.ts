@@ -47,8 +47,8 @@ export class FormComponent implements OnInit{
     this.orders=this.fb.array([])
     const form = this.fb.group({
      name: this.fb.control<string>('',[Validators.required, Validators.minLength(3)]),
-     address: this.fb.control<string>(''),
-     email: this.fb.control<string>(''),
+     address: this.fb.control<string>('',[Validators.required,Validators.minLength(3)]),
+     email: this.fb.control<string>('',[Validators.required, Validators.email]),
     deliveryDate: this.fb.control<string>(''),
     urgency: this.fb.control<boolean>(false),
     orders: this.orders

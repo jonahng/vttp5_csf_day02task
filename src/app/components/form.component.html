@@ -11,13 +11,15 @@
 
         <tr>
           <td>Address</td>
-          <td><input type="text" formControlName="address" ></td>
+          <td><input type="text" formControlName="address" 
+            [ngClass]="{ 'valid': isValid('address'), 'invalid': isCtrlInvalid('address') }"></td>
           
       </tr>
 
       <tr>
         <td>Email</td>
-        <td><input type="text" formControlName="email" ></td>
+        <td><input type="text" formControlName="email" 
+            [ngClass]="{ 'valid': isValid('email'), 'invalid': isCtrlInvalid('email') }"></td>
         
     </tr>
 
