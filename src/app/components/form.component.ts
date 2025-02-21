@@ -14,6 +14,7 @@ export class FormComponent implements OnInit{
   private fb = inject(FormBuilder)
   protected form!: FormGroup
   protected orders!: FormArray
+  protected toShow = true
 
   ngOnInit(): void {
     this.form = this.createForm()
@@ -55,6 +56,10 @@ export class FormComponent implements OnInit{
 
     })
     return form
+  }
+
+  urgencyClicked(){
+    this.toShow = !this.toShow
   }
 
 
