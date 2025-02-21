@@ -4,7 +4,8 @@
     <table>
         <tr>
             <td>Name</td>
-            <td><input type="text" formControlName="name" ></td>
+            <td><input type="text" formControlName="name" 
+                [ngClass]="{ 'valid': isValid('name'), 'invalid': isCtrlInvalid('name') }"></td>
             
         </tr>
 
@@ -50,22 +51,38 @@
         <tr>
             <td>Submit</td>
             <td><button type="button" (click)="processForm()">Submit</button>
-                <button type="button">ADD COLLABORATOR</button>
+                <button type="button" (click)="addOrder()">Add Order</button>
+
             </td>
             
         </tr>
     </table>
 
-    <h3>Collaborators</h3>
+
+   
+    <h2>Orders</h2>
 
     <table>
         <thead>
             <tr>
+                <th>Number</th>
                 <th>Item</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
             </tr>
         </thead>
+        <tbody formArrayName="orders">
+            @for (order of orders.controls; let idx = $index; track order){
+            <tr [formGroupName]="idx">
+                <td>{{idx + 1}}</td>
+                <td><input type="text" formControlName="item"></td>
+                <td><input type="text" formControlName="quantity"></td>
+                <td><input type="text" formControlName="unitPrice"></td>
+                <td><button type="button" (click)="removeOrder(idx)">X</button></td>
+            </tr>
+        }
+        </tbody>
 
     </table>
+
 </form>
